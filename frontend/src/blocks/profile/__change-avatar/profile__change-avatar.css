@@ -1,0 +1,24 @@
+.profile__change-avatar {
+  position: relative;
+  border: none;
+  padding: 0;
+}
+
+.profile__change-avatar::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../../../images/edit-profile-button.svg") center no-repeat
+    #000;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.profile__change-avatar:hover::before {
+  opacity: 0.8;
+}

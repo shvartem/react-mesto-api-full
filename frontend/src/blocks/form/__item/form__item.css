@@ -1,0 +1,16 @@
+.form__item {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  line-height: 1.21;
+  outline: none;
+}
+
+.form__item:focus {
+  border-radius: 3px;
+  box-shadow: 0 0 5px 0px rgba(60, 70, 200, 0.7);
+}

@@ -1,0 +1,9 @@
+.page {
+  min-width: 320px;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}

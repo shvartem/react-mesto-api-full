@@ -1,4 +1,4 @@
-const BASE_AUTH_URL = 'http://localhost:5000';
+import { BASE_AUTH_URL } from './constants';
 
 function checkResponseStatus(res) {
   if (res.ok) return res.json();

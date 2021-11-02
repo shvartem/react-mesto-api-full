@@ -1,4 +1,4 @@
-import { baseApiUrl } from './constants';
+import { BASE_API_URL } from './constants';
 
 class Api {
   constructor({ baseUrl, headers }) {
@@ -88,14 +88,9 @@ class Api {
   }
 }
 
-// const myToken = 'f2403b1e-b069-4c41-a72d-caa156ab74c7';
-// const myId = '553193e6af6a1a8f2737e6f2';
-// const baseUrl = 'https://nomoreparties.co/v1/cohort-26';
-
 const api = new Api({
-  baseUrl: baseApiUrl,
+  baseUrl: BASE_API_URL,
   headers: {
-    // authorization: myToken,
     'Content-Type': 'application/json',
   },
 });

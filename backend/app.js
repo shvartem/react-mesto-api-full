@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
 const helmet = require('helmet');
+require('dotenv').config();
 const cors = require('cors');
 
 const usersRouter = require('./routes/users.router');
@@ -24,7 +25,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb')
 
 const app = express();
 
-const { PORT = 5000 } = process.env;
+const { PORT = 3000 } = process.env;
 
 app.use(cors({ credentials: true, origin: ['mesto422.nomoredomains.work'] }));
 app.use(helmet());

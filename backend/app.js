@@ -18,7 +18,7 @@ const { newUserValidation, loginUserValidation } = require('./utils/validation-r
 const NotFoundError = require('./errors/not-found-error');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { logout } = require('./controllers/logout.controller');
-const checkCors = require('./middlewares/cors.moddleware');
+const checkCors = require('./middlewares/cors.middleware');
 
 mongoose.connect('mongodb://localhost:27017/mestodb')
   .then(() => console.log('Connected to Database'))
@@ -32,6 +32,7 @@ app.use(checkCors);
 // app.use(cors({
 //   credentials: true,
 //   origin: ['https://mesto422.nomoredomains.work'],
+
 // }));
 app.use(helmet());
 app.use(express.json());

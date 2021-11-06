@@ -31,14 +31,15 @@ const { PORT = 3000 } = process.env;
 // app.use(checkCors);
 app.use(cors({
   credentials: true,
-  origin: '*',
-
 }));
 app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
 app.use(requestLogger);
 
+app.get('/test', (req, res) => {
+  res.json({ message: 'GET' });
+});
 app.use('/signin', loginUserValidation, login);
 app.use('/signup', newUserValidation, createNewUser);
 app.delete('/logout', logout);

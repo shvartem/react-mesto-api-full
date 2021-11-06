@@ -19,7 +19,7 @@ export function register(userData) {
 }
 
 export function authorize(userData) {
-  return fetch('api.mesto422.nomoredomains.icu/signin', {
+  return fetch('https://api.mesto422.nomoredomains.icu/signin', {
     method: 'POST',
     credentials: 'include',
     headers: {

@@ -28,10 +28,12 @@ const app = express();
 
 const { PORT = 3000 } = process.env;
 
-app.use(checkCors);
-// app.use(cors({
-//   credentials: true,
-// }));
+// app.use(checkCors);
+app.options('*', cors());
+app.use(cors({
+  credentials: true,
+  origin: '*',
+}));
 app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());

@@ -18,7 +18,6 @@ const { newUserValidation, loginUserValidation } = require('./utils/validation-r
 const NotFoundError = require('./errors/not-found-error');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { logout } = require('./controllers/logout.controller');
-const checkCors = require('./middlewares/cors.middleware');
 
 mongoose.connect('mongodb://localhost:27017/mestodb')
   .then(() => console.log('Connected to Database'))
@@ -27,13 +26,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb')
 const app = express();
 
 const { PORT = 3000 } = process.env;
-app.use((req, res, next) => {
-  console.log({ user: req.user });
 
-  next();
-});
-
-// app.use(checkCors);
 app.use(cors({
   credentials: true,
   origin: [

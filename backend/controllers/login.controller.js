@@ -28,9 +28,9 @@ async function login(req, res, next) {
 
     return res
       .cookie('jwt', token, {
-      // maxAge: 3600000 * 24 * 7,
-      // httpOnly: true,
-      // sameSite: true,
+        maxAge: 3600000 * 24 * 7,
+        httpOnly: true,
+        sameSite: true,
       })
       .json({
         _id: matchingUser._id,

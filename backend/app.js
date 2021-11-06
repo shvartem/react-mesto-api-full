@@ -31,7 +31,7 @@ app.use((req, res, next) => {
   const requestHeaders = req.headers['access-control-request-headers'];
   const { origin } = req.headers;
   const { method } = req;
-  console.log({ method, origin, requestHeaders });
+  console.log({ method, origin, requestHeaders: req.headers });
 
   next();
 });

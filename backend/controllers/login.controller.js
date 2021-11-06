@@ -30,7 +30,7 @@ async function login(req, res, next) {
       .cookie('jwt', token, {
         maxAge: 3600000 * 24 * 7,
         httpOnly: true,
-        // sameSite: true,
+        sameSite: 'None',
       })
       .json({
         _id: matchingUser._id,

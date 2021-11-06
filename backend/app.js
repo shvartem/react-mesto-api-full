@@ -40,10 +40,6 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(requestLogger);
 
-app.use((req, _, next) => {
-  console.log({ user: req.user });
-  next();
-});
 app.use('/signin', loginUserValidation, login);
 app.use('/signup', newUserValidation, createNewUser);
 app.delete('/logout', logout);

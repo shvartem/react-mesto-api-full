@@ -68,9 +68,9 @@ function App() {
   }
 
   function handleAuthorize({ loginData, setLoginData }) {
-    auth.getInitialCardsFromServer().then(console.log);
     auth.authorize(loginData)
-      .then((data) => {
+      .then((user) => {
+        setCurrentUser(user);
         setLoggedIn(true);
         setLoginData({
           email: '',

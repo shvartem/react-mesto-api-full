@@ -35,11 +35,10 @@ app.use((req, res, next) => {
 
   next();
 });
-// app.use(checkCors);
-app.options('*', cors());
+
 app.use(cors({
   credentials: true,
-  origin: '*',
+  origin: ['http://localhost:3000'],
 }));
 app.use(helmet());
 app.use(express.json());

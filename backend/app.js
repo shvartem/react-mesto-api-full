@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
 const helmet = require('helmet');
 require('dotenv').config();
-const cors = require('cors');
+// const cors = require('cors');
 
 const usersRouter = require('./routes/users.router');
 const cardsRouter = require('./routes/cards.router');
@@ -18,6 +18,7 @@ const { newUserValidation, loginUserValidation } = require('./utils/validation-r
 const NotFoundError = require('./errors/not-found-error');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { logout } = require('./controllers/logout.controller');
+const checkCors = require('./middlewares/cors.moddleware');
 
 mongoose.connect('mongodb://localhost:27017/mestodb')
   .then(() => console.log('Connected to Database'))
@@ -27,10 +28,11 @@ const app = express();
 
 const { PORT = 3000 } = process.env;
 
-app.use(cors({
-  credentials: true,
-  origin: ['https://mesto422.nomoredomains.work'],
-}));
+app.use(checkCors);
+// app.use(cors({
+//   credentials: true,
+//   origin: ['https://mesto422.nomoredomains.work'],
+// }));
 app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());

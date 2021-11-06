@@ -9,6 +9,7 @@ function checkResponseStatus(res) {
 export function register(userData) {
   return fetch(`${BASE_AUTH_URL}/signup`, {
     method: 'POST',
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
     },

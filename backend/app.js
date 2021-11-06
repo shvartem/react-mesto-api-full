@@ -40,6 +40,7 @@ app.use(cors({
     'https://mesto422.nomoredomains.work',
     'http://mesto422.nomoredomains.work',
   ],
+  samSite: 'none',
 }));
 app.use(helmet());
 app.use(express.json());

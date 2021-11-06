@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
 const helmet = require('helmet');
 require('dotenv').config();
-// const cors = require('cors');
+const cors = require('cors');
 
 const usersRouter = require('./routes/users.router');
 const cardsRouter = require('./routes/cards.router');
@@ -28,12 +28,12 @@ const app = express();
 
 const { PORT = 3000 } = process.env;
 
-app.use(checkCors);
-// app.use(cors({
-//   credentials: true,
-//   origin: ['https://mesto422.nomoredomains.work'],
+// app.use(checkCors);
+app.use(cors({
+  credentials: true,
+  origin: '*',
 
-// }));
+}));
 app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());

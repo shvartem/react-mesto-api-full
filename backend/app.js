@@ -28,10 +28,7 @@ const app = express();
 
 const { PORT = 3000 } = process.env;
 app.use((req, res, next) => {
-  const requestHeaders = req.headers['access-control-request-headers'];
-  const { origin } = req.headers;
-  const { method } = req;
-  console.log({ method, origin, requestHeaders: req.headers });
+  console.log({ user: req.user });
 
   next();
 });

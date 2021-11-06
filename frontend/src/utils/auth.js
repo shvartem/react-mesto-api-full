@@ -21,7 +21,6 @@ export function register(userData) {
 export function authorize(userData) {
   return fetch(`${BASE_AUTH_URL}/signin`, {
     method: 'POST',
-    credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
     },

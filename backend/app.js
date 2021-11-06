@@ -38,7 +38,11 @@ app.use((req, res, next) => {
 
 app.use(cors({
   credentials: true,
-  origin: ['http://localhost:3000'],
+  origin: [
+    'http://localhost:3000',
+    'https://mesto422.nomoredomains.work',
+    'http://mesto422.nomoredomains.work',
+  ],
 }));
 app.use(helmet());
 app.use(express.json());

@@ -27,7 +27,10 @@ const app = express();
 
 const { PORT = 3000 } = process.env;
 
-app.use(cors({ credentials: true, origin: ['mesto422.nomoredomains.work'] }));
+app.use(cors({
+  credentials: true,
+  origin: ['https://mesto422.nomoredomains.work'],
+}));
 app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());

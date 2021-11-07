@@ -12,6 +12,7 @@ function authorize(req, res, next) {
   try {
     const user = jwt.verify(token, TOKEN_SECRET);
     req.user = user;
+    console.log('auth', req.user);
   } catch (e) {
     return next(new UnauthorizedError('Необходима авторизация'));
   }

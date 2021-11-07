@@ -1,7 +1,11 @@
 async function logout(req, res, next) {
-  console.log({ user: req.user });
+  console.log('logout', req.user);
   return res
-    .clearCookie('jwt')
+    .clearCookie('jwt', {
+      httpOnly: true,
+      secure: true,
+      sameSite: true,
+    })
     .json({ message: 'Успешный выход' });
 }
 

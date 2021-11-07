@@ -42,10 +42,10 @@ app.use(requestLogger);
 
 app.use('/signin', loginUserValidation, login);
 app.use('/signup', newUserValidation, createNewUser);
-app.delete('/logout', logout);
 
 app.use(authorize);
 
+app.delete('/logout', logout);
 app.use('/users', usersRouter);
 app.use('/cards', cardsRouter);
 

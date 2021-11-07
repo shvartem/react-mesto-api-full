@@ -57,8 +57,7 @@ function App() {
 
   function handleSignOut(evt) {
     evt.preventDefault();
-    auth.logout().then((d) => {
-      console.log(d);
+    auth.logout().then(() => {
       // удаление данных при выходе
       setCurrentUser({});
       setCurrentCards([]);

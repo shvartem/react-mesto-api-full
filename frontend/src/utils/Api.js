@@ -70,7 +70,6 @@ class Api {
   }
 
   deleteLikeCards(cardId) {
-    console.log(`${this._baseUrl}/cards/${cardId}/likes`);
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: 'DELETE',
       credentials: 'include',

@@ -4,7 +4,7 @@ async function logout(req, res, next) {
     .clearCookie('jwt', {
       httpOnly: true,
       secure: true,
-      sameSite: 'Lax',
+      sameSite: 'None',
     })
     .json({ message: 'Успешный выход' });
 }

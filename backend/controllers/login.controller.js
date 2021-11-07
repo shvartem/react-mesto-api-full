@@ -31,7 +31,7 @@ async function login(req, res, next) {
         maxAge: 3600000 * 24 * 7,
         httpOnly: true,
         secure: true,
-        sameSite: 'Lax',
+        sameSite: 'None',
       })
       .json({
         _id: matchingUser._id,

@@ -1,5 +1,8 @@
 async function logout(req, res, next) {
-  return res.clearCookie('jwt').json({ message: 'Успешный выход' });
+  console.log({ user: req.user });
+  return res
+    .clearCookie('jwt')
+    .json({ message: 'Успешный выход' });
 }
 
 module.exports = { logout };

@@ -97,7 +97,7 @@ async function dislikeCard(req, res, next) {
       cardId,
       { $pull: { likes: _id } },
       { new: true },
-    );
+    ).orFail();
 
     return res.status(HTTP_CODES.SUCCESS_CODE).json(updatedCard);
   } catch (e) {
